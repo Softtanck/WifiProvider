@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         DhcpInfo wifiManagerDhcpInfo = wifiManager.getDhcpInfo();
         if (wifiManagerDhcpInfo != null) {
             String gateWay = intToIp(wifiManagerDhcpInfo.gateway);
-            Toast.makeText(this, "The gateway is : " + gateWay, Toast.LENGTH_SHORT).show();
+            String serverAddress = intToIp(wifiManagerDhcpInfo.ipAddress);
+            Toast.makeText(this, "The gateway is : " + gateWay + ", serverAddress : " + serverAddress, Toast.LENGTH_SHORT).show();
         }
     }
 
